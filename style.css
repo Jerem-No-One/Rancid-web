@@ -1,0 +1,93 @@
+ body {
+ font-family: 'Trebuchet MS', Verdana, Arial, sans-serif;
+ font-size: 10pt;
+ padding: 0;
+ margin: 15px;
+ line-height: 1.35em;
+ text-align: center;
+ }
+form {
+ /*background-color:#FAFAFA;*/
+ padding:10px;
+ width:280px;
+ }
+fieldset {
+ padding:0 20px 20px 20px;
+ margin-bottom:10px;
+ border:0px solid #FAFAFA;
+ }
+legend {
+ color: black;
+ font-weight:bold;
+ font-size: large;
+ }
+/*label {
+ margin-top:10px;
+ display:block;
+ }*/
+ label.inline {
+ display:inline;
+ margin-right:50px;
+ }
+/*input, textarea, select, option {
+ background-color:#FFF3F3;
+ }*/
+input, textarea, select {
+ padding:3px;
+ border:1px solid #ADCF4F;
+ border-radius:5px;
+ width:200px;
+ box-shadow:1px 1px 2px #ADCF4Finset;
+
+ }
+select {
+ margin-top:10px;
+ }
+input[type=radio] {
+ background-color:transparent;
+ border:none;
+ width:10px;
+ }
+input[type=submit], input[type=button] {
+ width:100px;
+ margin-left:5px;
+ box-shadow:1px 1px 1px #ADCF4F;
+ cursor:pointer;
+ }
+em {
+ font-weight: bold;
+ font-style: normal;
+ color: #f00;
+ }
+#password_enable{
+  display:none;
+}
+.titre{
+  display: block;
+  margin: 1.0em auto;
+  text-align: center;
+}
+.delete_device{
+  display: block;
+  margin: 1.0em auto;
+  text-align: center;
+}
+.add_device{
+  display: block;
+  margin: 1.0em auto;
+  text-align: center;
+  background-color:#FAFAFA;
+}
+.align-center{
+  display: block;
+  margin: 1.0em auto;
+  text-align: center;
+}
+#checkbox_css{
+  text-align: center;
+  position: relative;
+}
+#checkbox_css input[type=checkbox]{
+
+  position: absolute; top: 0; left: 100px;
+}
