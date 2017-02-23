@@ -53,13 +53,13 @@
       $cloginrc = fopen ('/usr/local/rancid/.cloginrc', 'a+'); // On ajoute dans le fichier de conf cloginrc les paramètres d'authentification du device
       if ($autoenable_device == 'oui')
       {
-        fputs($cloginrc, "add username $name_device $user_device \n");
+        fputs($cloginrc, "add user $name_device $user_device \n");
         fputs($cloginrc, "add password $name_device $password_device $password_device \n");
         fputs($cloginrc, "add autoenable $name_device 1 \n");
       }
       elseif($autoenable_device == 'non')
       {
-        fputs($cloginrc, "add username $name_device $user_device \n");
+        fputs($cloginrc, "add user $name_device $user_device \n");
         fputs($cloginrc, "add password $name_device $password_device $password_enable \n");
       }
       if ($connection_device == 'ssh')

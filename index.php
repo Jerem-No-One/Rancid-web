@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="code.js"></script>
     <title>Rancid Web</title>
   </head>
   <body>
@@ -16,36 +17,12 @@
       <div><input type="submit" value="Valider" /></div>
     </form>
     <?php
-    /*}
-    elseif(isset($_POST['password']) AND $_POST['password'] != "b2msab2msa")  // Mauvais mot de passe
-    {
-      echo '<p>Mot de passe incorrect</p>';
-      echo '<input type="button" value="Retour" onclick="history.go(-1)">';*/
     }
     elseif(isset($_POST['password']) AND $_POST['password'] == "password") // Envoi du formulaire pour l'utilisateur authentifié
     {
        ?>
        <h1>Rancid Web</h1>
-       <form action="add_device.php" method="post" class="add_device">  <!-- Formulaire ajout d'un device -->
-         <script type="text/javascript">
-         function passwordEnable() {
-           if(document.getElementById('oui').checked == true){
-             document.getElementById('password_enable').style.display = "none";
-           }else if (document.getElementById('non').checked == true){
-             document.getElementById('password_enable').style.display = "block";
-           }
-         }
-         function deleteDevice() {
-           var txt;
-           var r = confirm("Voulez-vous vraiment suppimer?");
-           if (r == true) {
-             txt = "You pressed OK!";
-           } else {
-             txt = "You pressed Cancel!";
-           }
-           document.getElementById("demo").innerHTML = txt;
-         }
-         </script>
+       <form action="add_device.php" method="post" class="add_device" name="add_device">  <!-- Formulaire ajout d'un device -->
          <filedset>
            <legend class="titre">Ajouter un équipement</legend>
              <p>
@@ -103,30 +80,25 @@
              </p>
          </filedset>
        </form>
-       <form action="delete_device.php" method="post" class="delete_device"> <!-- Formulaire de suppression d'un device -->
+       <form action="delete_device.php" method="post" class="delete_device" name="delete_device"> <!-- Formulaire de suppression d'un device -->
          <fieldset>
            <legend class="titre">Supprimer un équipement</legend>
              <p>
              <div>
-               <!--<label for="name">Nom de l'équipement</label></br>
-               <select name="name_del">-->
-
                  <?php
                  shell_exec("cut -d \; -f 1 /usr/local/rancid/var/networking/router.db > /var/www/rancid-web/data/name_device.txt"); // On récupère les ip des switchs déjà créé et on les stockent dans un fichier
                  $name = file('/var/www/rancid-web/data/name_device.txt');
                  foreach($name as $name_del) // On parcours le fichier et on affiche chaque ip
                  {
-                   #echo '<option value="'.$name_del.'">'.$name_del.'</option>';
                    echo '<div id="checkbox_css"><input type="checkbox" name="choix[]" id="'.$name_del.'" value="'.$name_del.'"><label for="'.$name_del.'">'.$name_del.'</label><br></div>';
                  }
                  ?>
                </select></br>
              </div>
              <div>
-               <!--<input type="submit" value="Supprimer" />-->
                <input type="button" Onclick="deleteDevice()" value="Supprimer">
 
-               <input type="button" OnClick="javascript:window.location.reload()" value="Actualiser">
+              <input type="button" OnClick="javascript:window.location.reload()" value="Actualiser">
              </div>
              </p>
           </fieldset>
