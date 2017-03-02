@@ -1,24 +1,16 @@
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="code.js"></script>
     <title>Rancid Web</title>
   </head>
   <body>
     <?php
-    if (!isset($_POST['password']) OR $_POST['password'] != "password") // Envoi de l'authentification si l'utilisateur n'est pas identifié
-    {
-    ?>
-    <form action="index.php" method="post" class="align-center">
-      <p>Veuillez saisir le mot de passe :</p>
-      <div><input type="password" name="password" /></div>
-      <div><input type="submit" value="Valider" /></div>
-    </form>
-    <?php
-    }
-    elseif(isset($_POST['password']) AND $_POST['password'] == "password") // Envoi du formulaire pour l'utilisateur authentifié
+    if (!empty($_SESSION['logged_in']))
     {
        ?>
        <h1>Rancid Web</h1>
@@ -40,7 +32,7 @@
              </div>
              <div>
                <label for="password_device">Mot de passe ssh/telnet <em>*</em></label>
-               <input type="password" name="password_device" required=""/></br>
+               <input type="password" name="password_device" placeholder="Password" required=""/></br>
              </div>
              <div id="password_enable">
                <label class="password_enable" for="password_enable">Mot de passe enable</label>
@@ -93,7 +85,7 @@
                    echo '<div id="checkbox_css"><input type="checkbox" name="choix[]" id="'.$name_del.'" value="'.$name_del.'"><label for="'.$name_del.'">'.$name_del.'</label><br></div>';
                  }
                  ?>
-               </select></br>
+                 <br>
              </div>
              <div>
                <input type="button" Onclick="deleteDevice()" value="Supprimer">
@@ -103,8 +95,14 @@
              </p>
           </fieldset>
        </form>
+       <a href='logout.php'>Déconnexion</a>
        <?php
         }
+        else
+        {
+          header('Location:login.php');
+        }
         ?>
+    <script src="code.js"></script>
   </body>
 </html>

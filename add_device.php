@@ -1,3 +1,6 @@
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -81,7 +84,8 @@
     }
     ?>
     <form class="align-center">
-      <input type="button" value="Retour" onclick="history.go(-1)">
+      <input type="button" value="Retour" onclick="location.href='index.php';">
+      <!--<input type="button" value="Retour" onclick="history.go(-1)">-->
     </form>
   </body>
 </html>
