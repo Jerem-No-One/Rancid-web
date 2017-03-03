@@ -13,6 +13,7 @@ session_start();
     if (!empty($_SESSION['logged_in']))
     {
        ?>
+       <div><input type="button" onclick="location.href='settings.php'" value="Paramètres"></div>
        <h1>Rancid Web</h1>
        <form action="add_device.php" method="post" class="add_device" name="add_device">  <!-- Formulaire ajout d'un device -->
          <filedset>
