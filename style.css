@@ -72,6 +72,11 @@ em {
   margin: 1.0em auto;
   text-align: center;
 }
+.settings{
+  display: block;
+  margin: 1.0em auto;
+  text-align: center;
+}
 .add_device{
   display: block;
   margin: 1.0em auto;
@@ -90,4 +95,9 @@ em {
 #checkbox_css input[type=checkbox]{
 
   position: absolute; top: 0; left: 100px;
+}
+#titre_index{
+  display: flex;
+  justify-content: center;
+  /*position: absolute; top: 5px; left:55%;*/
 }

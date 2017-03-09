@@ -5,8 +5,16 @@
     <title>Hostname</title>
   </head>
   <body>
-    <h1>Modifier Hostname</h1>
-    <input type="text" name="hostname" placeholder="hostname.domainname" autofocus=""/>
-    <input type="button" onclick="index.php" value="valider"/>
+    <?php
+    $hostname = htmlspecialchars($_POST['hostname']);
+    $hostname = trim($hostname);
+    $hostname_file = fopen('/etc/hostname', 'a+');
+    ftruncate($hostname_file,0);
+    fputs($hostname_file,$hostname);
+    fclose($hostname_file);
+    echo "Le nouveau nom du serveur est $hostname"
+    ?>
+    <p>Un reboot est nécessaire !</p>
+    <div><input type="button" onclick="location.href='index.php'" value="Retour"></div>
   </body>
-  </html>
+</html>
