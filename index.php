@@ -15,7 +15,7 @@ session_start();
        ?>
        <div id="titre_index">
          <h1>Rancid Web</h1>
-         <img src="images/settings.jpg" type="button" onclick="location.href='settings.php'" style="cursor:pointer;">
+         <div><img id='settings' src="images/settings.jpg" type="button" onclick="location.href='settings.php'" style="cursor:pointer;"></div>
        </div>
        <form action="add_device.php" method="post" class="add_device" name="add_device">  <!-- Formulaire ajout d'un device -->
          <filedset>
