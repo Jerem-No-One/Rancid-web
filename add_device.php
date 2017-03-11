@@ -26,26 +26,34 @@ session_start();
     shell_exec("cut -d \  -f1 /etc/hosts > data/ip.txt");
     $ip_txt = fopen('data/ip.txt', 'r');
     $name_device_txt = fopen('data/name_device.txt', 'r');
-    while(!feof($ip_txt)) // On parcours le fichier ip jusqu'à la fin
+    if(filter_var($ip_device, FILTER_VALIDATE_IP))
     {
-      $ip_exist = fgets($ip_txt,4096);
-      if(preg_match("#$ip_device#", $ip_exist)) // On vérifie que l'ip ajouté n'est pas déjà présent
+      while(!feof($ip_txt)) // On parcours le fichier ip jusqu'à la fin
       {
-        echo "L'ip est déjà attribué à un équipement ...";
-        $abort = TRUE;
+        $ip_exist = fgets($ip_txt,4096);
+        if(preg_match("#$ip_device#", $ip_exist)) // On vérifie que l'ip ajouté n'est pas déjà présent
+        {
+          echo "L'ip est déjà attribué à un équipement ...";
+          $abort = TRUE;
+        }
       }
+      while(!feof($name_device_txt)) // On parcours le fichier de nom jusqu'à la fin
+      {
+        $name_exist = fgets($name_device_txt,4096);
+        if(preg_match("#$name_device#", $name_exist)) // On vérifie que le nom ajouté n'est pas déjà présent
+        {
+          echo "Le nom est déjà attribué à un équipement ...";
+          $abort = TRUE;
+        }
+      }
+      fclose($name_device_txt);
+      fclose($ip_txt);
     }
-    while(!feof($name_device_txt)) // On parcours le fichier de nom jusqu'à la fin
+    else
     {
-      $name_exist = fgets($name_device_txt,4096);
-      if(preg_match("#$name_device#", $name_exist)) // On vérifie que le nom ajouté n'est pas déjà présent
-      {
-        echo "Le nom est déjà attribué à un équipement ...";
+        echo "Le format adresse IP n'est pas respecté";
         $abort = TRUE;
-      }
     }
-    fclose($name_device_txt);
-    fclose($ip_txt);
     if($abort == TRUE)
     {
       echo '<div class="align-center"><input type="button" value="Retour" onclick="history.go(-1)"></div>';
