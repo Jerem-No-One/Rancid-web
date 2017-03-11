@@ -22,10 +22,10 @@ session_start();
     $modele_device = trim($modele_device);  // On nettoie la variable car il y a un retour chariot à la fin
     $abort = FALSE;
 
-    shell_exec("cut -d \; -f 1 /usr/local/rancid/var/networking/router.db > /var/www/rancid-web/data/name_device.txt"); // On met à jour le fichier nom avec les devices existants
-    shell_exec("cut -d \  -f1 /etc/hosts > /var/www/rancid-web/data/ip.txt");
-    $ip_txt = fopen('/var/www/rancid-web/data/ip.txt', 'r');
-    $name_device_txt = fopen('/var/www/rancid-web/data/name_device.txt', 'r');
+    shell_exec("cut -d \; -f 1 /usr/local/rancid/var/networking/router.db > data/name_device.txt"); // On met à jour le fichier nom avec les devices existants
+    shell_exec("cut -d \  -f1 /etc/hosts > data/ip.txt");
+    $ip_txt = fopen('data/ip.txt', 'r');
+    $name_device_txt = fopen('data/name_device.txt', 'r');
     while(!feof($ip_txt)) // On parcours le fichier ip jusqu'à la fin
     {
       $ip_exist = fgets($ip_txt,4096);
@@ -73,7 +73,7 @@ session_start();
       fclose($cloginrc);
       $router_db = fopen('/usr/local/rancid/var/networking/router.db', 'a+'); // On ajoute dans le fichier de conf router.db les informations de l'équipement
       $hosts = fopen('/etc/hosts', 'a+');
-      $ip_add_txt = fopen('/var/www/rancid-web/data/ip.txt', 'a+');
+      $ip_add_txt = fopen('data/ip.txt', 'a+');
       fputs($ip_add_txt,"$ip_device\n");
       fputs($hosts, "$ip_device $name_device\n");
       fputs($router_db, "$name_device;$modele_device;up \n");

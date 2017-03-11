@@ -46,9 +46,9 @@ session_start();
                <select name="modele_device">  <!-- Select dynamique -->
              </div>
                   <?php
-                  shell_exec("cut -d \; -f 1 /usr/local/rancid/etc/rancid.types.base | uniq > /var/www/rancid-web/data/modele.txt"); // On récupère les modèles qui sont les configurations de rancid et on les sockent dans un fichier
-                  shell_exec(" sed -i -e '/#/ d' /var/www/rancid-web/data/modele.txt"); // On supprime les caractères # du fichier créé
-                  $modele = file('/var/www/rancid-web/data/modele.txt');
+                  shell_exec("cut -d \; -f 1 /usr/local/rancid/etc/rancid.types.base | uniq > data/modele.txt"); // On récupère les modèles qui sont les configurations de rancid et on les sockent dans un fichier
+                  shell_exec(" sed -i -e '/#/ d' data/modele.txt"); // On supprime les caractères # du fichier créé
+                  $modele = file('data/modele.txt');
                   foreach($modele as $modele_device) // On parcours le fichier et on affiche chaque modèle
                   {
                     echo '<option value="'.$modele_device.'">'.$modele_device.'</option>';
@@ -81,8 +81,8 @@ session_start();
              <p>
              <div>
                  <?php
-                 shell_exec("cut -d \; -f 1 /usr/local/rancid/var/networking/router.db > /var/www/rancid-web/data/name_device.txt"); // On récupère les ip des switchs déjà créé et on les stockent dans un fichier
-                 $name = file('/var/www/rancid-web/data/name_device.txt');
+                 shell_exec("cut -d \; -f 1 /usr/local/rancid/var/networking/router.db > data/name_device.txt"); // On récupère les ip des switchs déjà créé et on les stockent dans un fichier
+                 $name = file('data/name_device.txt');
                  foreach($name as $name_del) // On parcours le fichier et on affiche chaque ip
                  {
                    echo '<div id="checkbox_css"><input type="checkbox" name="choix[]" id="'.$name_del.'" value="'.$name_del.'"><label for="'.$name_del.'">'.$name_del.'</label><br></div>';

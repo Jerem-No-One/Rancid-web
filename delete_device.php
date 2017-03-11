@@ -28,7 +28,7 @@ session_start();
            $hosts = fopen('/etc/hosts','w');
            fwrite($hosts, "$data \n");
            fclose($hosts);
-           shell_exec("cut -d \  -f1 /etc/hosts > /var/www/rancid-web/data/ip.txt");
+           shell_exec("cut -d \  -f1 /etc/hosts > data/ip.txt");
            echo "$choix ";
            $execution++;
          }
