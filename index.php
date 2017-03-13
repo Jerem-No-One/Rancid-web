@@ -15,7 +15,10 @@ session_start();
        ?>
        <div>
          <h1>Rancid Web</h1>
-         <img src="images/settings.jpg" type="button" onclick="location.href='settings.php'" style="cursor:pointer;">
+         <button type="button" class="btn btn-default btn-sm" onclick="location.href='settings.php'">
+          <span class="glyphicon glyphicon-cog"></span> Paramètres
+         </button>
+<!--         <img src="images/settings.jpg" type="button" onclick="location.href='settings.php'" style="cursor:pointer;">-->
        </div>
        <form action="add_device.php" method="post" class="add_device" name="add_device">  <!-- Formulaire ajout d'un device -->
          <filedset>
@@ -81,9 +84,9 @@ session_start();
              <p>
              <div>
                  <?php
-                 shell_exec("cut -d \; -f 1 /usr/local/rancid/var/networking/router.db > data/name_device.txt"); // On récupère les ip des switchs déjà créé et on les stockent dans un fichier
+                 shell_exec("cut -d \; -f 1 /usr/local/rancid/var/networking/router.db > data/name_device.txt"); // On récupère les noms des switchs déjà créé et on les stockent dans un fichier
                  $name = file('data/name_device.txt');
-                 foreach($name as $name_del) // On parcours le fichier et on affiche chaque ip
+                 foreach($name as $name_del) // On parcours le fichier et on affiche chaque nom
                  {
                    echo '<div><input type="checkbox" name="choix[]" id="'.$name_del.'" value="'.$name_del.'"><label for="'.$name_del.'">'.$name_del.'</label><br></div>';
                  }
@@ -92,7 +95,10 @@ session_start();
              </div>
              <div>
               <input type="button" Onclick="deleteDevice()" value="Supprimer">
-              <input type="button" OnClick="javascript:window.location.reload()" value="Actualiser">
+	      <button type="button" class="btn btn-default btn-sm" OnClick="javascript:window.location.reload()">
+              <span class="glyphicon glyphicon-refresh"></span> Actualiser
+              </button>
+              <!--<input type="button" OnClick="javascript:window.location.reload()" value="Actualiser">-->
              </div>
              </p>
           </fieldset>
