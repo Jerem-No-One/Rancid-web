@@ -8,7 +8,7 @@
     <?php
     $hostname_serveur = shell_exec("cat /etc/hostname");
      ?>
-     <form action="change_hostname.php" method="post" class="settings" name="change_hostname">  <!-- Formulaire ajout d'un device -->
+     <form action="change_hostname.php" method="post" name="change_hostname">  <!-- Formulaire ajout d'un device -->
        <filedset>
          <legend class="titre">Hostname</legend>
          <div><input type="text" name="hostname" placeholder="<?php echo $hostname_serveur ?>" required=""></div>

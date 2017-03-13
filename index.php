@@ -13,13 +13,13 @@ session_start();
     if (!empty($_SESSION['logged_in']))
     {
        ?>
-       <div id="titre_index">
+       <div>
          <h1>Rancid Web</h1>
-         <div><img id='settings' src="images/settings.jpg" type="button" onclick="location.href='settings.php'" style="cursor:pointer;"></div>
+         <img src="images/settings.jpg" type="button" onclick="location.href='settings.php'" style="cursor:pointer;">
        </div>
        <form action="add_device.php" method="post" class="add_device" name="add_device">  <!-- Formulaire ajout d'un device -->
          <filedset>
-           <legend class="titre">Ajouter un équipement</legend>
+           <legend>Ajouter un équipement</legend>
              <p>
              <div>
                <label for="adresse_ip">Adresse IP <em>*</em></label>
@@ -37,7 +37,7 @@ session_start();
                <label for="password_device">Mot de passe ssh/telnet <em>*</em></label>
                <input type="password" name="password_device" placeholder="Password" required=""/></br>
              </div>
-             <div id="password_enable">
+             <div>
                <label class="password_enable" for="password_enable">Mot de passe enable</label>
                <input class="password_enable" type="password" name="password_enable"/></br>
              </div>
@@ -75,9 +75,9 @@ session_start();
              </p>
          </filedset>
        </form>
-       <form action="delete_device.php" method="post" class="delete_device" name="delete_device"> <!-- Formulaire de suppression d'un device -->
+       <form action="delete_device.php" method="post" name="delete_device"> <!-- Formulaire de suppression d'un device -->
          <fieldset>
-           <legend class="titre">Supprimer un équipement</legend>
+           <legend>Supprimer un équipement</legend>
              <p>
              <div>
                  <?php
@@ -85,7 +85,7 @@ session_start();
                  $name = file('data/name_device.txt');
                  foreach($name as $name_del) // On parcours le fichier et on affiche chaque ip
                  {
-                   echo '<div id="checkbox_css"><input type="checkbox" name="choix[]" id="'.$name_del.'" value="'.$name_del.'"><label for="'.$name_del.'">'.$name_del.'</label><br></div>';
+                   echo '<div><input type="checkbox" name="choix[]" id="'.$name_del.'" value="'.$name_del.'"><label for="'.$name_del.'">'.$name_del.'</label><br></div>';
                  }
                  ?>
                  <br>

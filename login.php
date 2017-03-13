@@ -15,7 +15,7 @@
      else
      {
        ?>
-       <form method="post" class="align-center">
+       <form method="post">
          <fieldset>
            <h1>Authentification</h1>
            <div><input type="text" name="username" placeholder="Username" autofocus="" required=""/></div>

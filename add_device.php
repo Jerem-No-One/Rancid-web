@@ -56,7 +56,7 @@ session_start();
     }
     if($abort == TRUE)
     {
-      echo '<div class="align-center"><input type="button" value="Retour" onclick="history.go(-1)"></div>';
+      echo '<div><input type="button" value="Retour" onclick="history.go(-1)"></div>';
       exit;
     }
     else
@@ -91,9 +91,8 @@ session_start();
       fclose($îp_add_txt);
     }
     ?>
-    <form class="align-center">
+    <form>
       <input type="button" value="Retour" onclick="location.href='index.php';">
-      <!--<input type="button" value="Retour" onclick="history.go(-1)">-->
     </form>
   </body>
 </html>
