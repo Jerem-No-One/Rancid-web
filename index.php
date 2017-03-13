@@ -37,7 +37,7 @@ session_start();
                <label for="password_device">Mot de passe ssh/telnet <em>*</em></label>
                <input type="password" name="password_device" placeholder="Password" required=""/></br>
              </div>
-             <div>
+             <div id="password_enable" class="hidden">
                <label class="password_enable" for="password_enable">Mot de passe enable</label>
                <input class="password_enable" type="password" name="password_enable"/></br>
              </div>
