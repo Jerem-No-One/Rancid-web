@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
     <title>Hostname</title>
   </head>
   <body>
