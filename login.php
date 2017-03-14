@@ -20,7 +20,7 @@
            <h1>Authentification</h1>
            <div><input type="text" name="username" placeholder="Username" autofocus="" required=""/></div>
            <div><input type="password" name="password" placeholder="Password" required=""/></div>
-           <div><input type="submit" value="Valider" /></div>
+           <div><input type="submit" value="Connexion" class="btn btn-default btn-sm"/></div>
          </fieldset>
        </form>
        <?php

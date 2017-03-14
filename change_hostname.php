@@ -15,6 +15,8 @@
     echo "Le nouveau nom du serveur est $hostname"
     ?>
     <p>Un reboot est nécessaire !</p>
-    <div><input type="button" onclick="location.href='index.php'" value="Retour"></div>
+    <button type="button" class="btn btn-default btn-sm" onclick="location.href='index.php'">
+      <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+    </button>
   </body>
 </html>

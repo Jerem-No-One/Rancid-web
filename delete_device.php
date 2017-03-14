@@ -43,8 +43,8 @@ session_start();
         echo "Veuillez cocher un équipement à supprimer ...";
       }
     ?>
-    <form>
-      <input type="button" value="Retour" onclick="location.href='index.php';">
-    </form>
+      <button type="button" class="btn btn-default btn-sm" OnClick="location.href='index.php'">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+      </button>
   </body>
 </html>

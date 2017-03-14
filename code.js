@@ -1,4 +1,4 @@
-function passwordEnable()
+/*function passwordEnable()
 {
   if(document.getElementById('oui').checked == true)
   {
@@ -7,6 +7,18 @@ function passwordEnable()
   else if (document.getElementById('non').checked == true)
   {
     document.getElementById('password_enable').style.display = "block";
+  }
+}*/
+
+function passwordEnable()
+{
+  if(document.getElementById('non').checked == true)
+  {
+    document.getElementById('disabledInput').disabled = false;
+  }
+  else if (document.getElementById('oui').checked == true)
+  {
+    document.getElementById('disabledInput').disabled = true;
   }
 }
 

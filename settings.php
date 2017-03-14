@@ -13,8 +13,12 @@
          <legend class="titre">Hostname</legend>
          <div><input type="text" name="hostname" placeholder="<?php echo $hostname_serveur ?>" required=""></div>
          <div>
-           <input type="button" onclick="location.href='index.php'" value="Retour">
-           <input type="submit" value="Modifier">
+           <button type="button" class="btn btn-default btn-sm" onclick="location.href='index.php'">
+             <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+           </button>
+           <button type="submit" class="btn btn-default btn-sm">
+             <span class="glyphicon glyphicon-edit"></span> Modifier
+           </button>
          </div>
        </fieldset>
      </form>
