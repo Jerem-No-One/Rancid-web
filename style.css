@@ -1,4 +1,8 @@
- body {
+.form-group .radio-inline input[type="radio"] {
+    position: relative;
+    width: inherit;
+}
+/* body {
  font-family: 'Trebuchet MS', Verdana, Arial, sans-serif;
  font-size: 10pt;
  padding: 0;
@@ -8,7 +12,7 @@
  }
 form {
  /*background-color:#FAFAFA;*/
- padding:10px;
+/* padding:10px;
  width:280px;
  }
 fieldset {
@@ -25,14 +29,14 @@ legend {
  margin-top:10px;
  display:block;
  }*/
- label.inline {
+/* label.inline {
  display:inline;
  margin-right:50px;
  }
 /*input, textarea, select, option {
  background-color:#FFF3F3;
  }*/
-input, textarea, select {
+/*input, textarea, select {
  padding:3px;
  border:1px solid #ADCF4F;
  border-radius:5px;
@@ -43,7 +47,8 @@ input, textarea, select {
 select {
  margin-top:10px;
  }
-input[type=radio] {
+*/
+input[type=radio]{
  background-color:transparent;
  border:none;
  width:10px;
@@ -59,6 +64,14 @@ em {
  font-style: normal;
  color: #f00;
  }
+.btn-sm {
+  margin-top: 25px;
+}
+.text-radio{
+  font-weight: inherit;
+  cursor: pointer;
+}
+ /*
 #password_enable{
   display:none;
 }
@@ -99,4 +112,4 @@ em {
 #titre_index{
   display: flex;
   justify-content: center;
-}
+}*/
