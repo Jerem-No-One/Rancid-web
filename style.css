@@ -53,10 +53,14 @@ input[type=radio]{
  border:none;
  width:10px;
  }
+ .form-control.radio-inline{
+   margin: 0px;
+   margin-left: 10px;
+ }
 input[type=submit], input[type=button] {
  width:100px;
  margin-left:5px;
- box-shadow:1px 1px 1px #ADCF4F;
+ box-shadow:1px 1px 1px #FFFFFF;
  cursor:pointer;
  }
 em {

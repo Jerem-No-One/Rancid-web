@@ -16,12 +16,28 @@
      {
        ?>
        <form method="post">
-         <fieldset>
-           <h1>Authentification</h1>
-           <div><input type="text" name="username" placeholder="Username" autofocus="" required=""/></div>
-           <div><input type="password" name="password" placeholder="Password" required=""/></div>
-           <div><input type="submit" value="Connexion" class="btn btn-default btn-sm"/></div>
-         </fieldset>
+         <div class="container">
+           <div class="row">
+             <div class="col-md-offset-4 col-md-1">
+               <h1>Authentification</h1>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-offset-4 col-md-1">
+               <input type="text" name="username" placeholder="Username" autofocus="" required=""/>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-offset-4 col-md-1">
+               <input type="password" name="password" placeholder="Password" required=""/>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-offset-4 col-md-1">
+               <input type="submit" value="Connexion" class="btn btn-default btn-sm"/>
+             </div>
+           </div>
+         </div>
        </form>
        <?php
      }

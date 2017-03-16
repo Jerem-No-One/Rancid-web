@@ -33,7 +33,7 @@ session_start();
         $ip_exist = fgets($ip_txt,4096);
         if(preg_match("#$ip_device#", $ip_exist)) // On vérifie que l'ip ajouté n'est pas déjà présent
         {
-          echo "L'ip est déjà attribué à un équipement ...";
+          echo '<div class="text-center">L\'ip est déjà attribué à un équipement ...</div>';
           $abort = TRUE;
         }
       }
@@ -42,7 +42,7 @@ session_start();
         $name_exist = fgets($name_device_txt,4096);
         if(preg_match("#$name_device#", $name_exist)) // On vérifie que le nom ajouté n'est pas déjà présent
         {
-          echo "Le nom est déjà attribué à un équipement ...";
+          echo  '<div class="text-center">Le nom est déjà attribué à un équipement ...</div>';
           $abort = TRUE;
         }
       }
@@ -51,7 +51,7 @@ session_start();
     }
     else
     {
-        echo "Le format adresse IP n'est pas respecté";
+        echo '<div class="text-center">Le format adresse IP n\'est pas respecté</div>';
         $abort = TRUE;
     }
     if($abort == TRUE)
@@ -85,14 +85,16 @@ session_start();
       fputs($ip_add_txt,"$ip_device\n");
       fputs($hosts, "$ip_device $name_device\n");
       fputs($router_db, "$name_device;$modele_device;up \n");
-      echo "$name_device a bien été ajouté !";
+      echo '<div class="text-center">'.$name_device.' a bien été ajouté !</div>';
       fclose($router_db);
       fclose($hosts);
       fclose($îp_add_txt);
     }
     ?>
+    <div class ="text-center">
       <button type="button" class="btn btn-default btn-sm" OnClick="location.href='index.php'">
         <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
       </button>
+    </div>
   </body>
 </html>

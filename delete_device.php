@@ -29,22 +29,24 @@ session_start();
            fwrite($hosts, "$data \n");
            fclose($hosts);
            shell_exec("cut -d \  -f1 /etc/hosts > data/ip.txt");
-           echo "$choix ";
+           echo '<div class="text-center">'.$choix.'</div>';
            $execution++;
          }
          if($execution == 1){
-            echo "a bien été supprimé !";
+            echo '<div class="text-center">Supprimé !</div>';
          }
          elseif($execution > 1){
-           echo "ont bien été supprimés !";
+           echo '<div class="text-center">Supprimés !</div>';
          }
       }
       else{
-        echo "Veuillez cocher un équipement à supprimer ...";
+        echo '<div class="text-center">Veuillez cocher un équipement à supprimer ...</div>';
       }
     ?>
+    <div class="text-center">
       <button type="button" class="btn btn-default btn-sm" OnClick="location.href='index.php'">
         <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
       </button>
+    </div>
   </body>
 </html>

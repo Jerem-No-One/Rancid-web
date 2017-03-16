@@ -12,11 +12,13 @@
     ftruncate($hostname_file,0);
     fputs($hostname_file,$hostname);
     fclose($hostname_file);
-    echo "Le nouveau nom du serveur est $hostname"
+    echo '<div class="text-center">Le nouveau nom du serveur est '.$hostname.'</div>';
     ?>
-    <p>Un reboot est nécessaire !</p>
-    <button type="button" class="btn btn-default btn-sm" onclick="location.href='index.php'">
-      <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
-    </button>
+    <div class="text-center">Un reboot est nécessaire !</div>
+    <div class="text-center">
+      <button type="button" class="btn btn-default btn-sm" onclick="location.href='index.php'">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+      </button>
+    </div>
   </body>
 </html>
