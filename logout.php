@@ -8,10 +8,11 @@
     <?php
     session_start();
     session_destroy();
+    header('Location:login.php');
     ?>
-    <div class="text-center">
+    <!--<div class="text-center">
       Vous avez été déconnecté.
       <a href="login.php">Login</a>
-    </div>
+    </div>-->
   </body>
 </html>

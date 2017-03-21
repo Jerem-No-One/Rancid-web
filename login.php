@@ -18,22 +18,22 @@
        <form method="post">
          <div class="container">
            <div class="row">
-             <div class="col-md-offset-4 col-md-1">
+             <div class="text-center">
                <h1>Authentification</h1>
              </div>
            </div>
            <div class="row">
-             <div class="col-md-offset-4 col-md-1">
+             <div class="text-center">
                <input type="text" name="username" placeholder="Username" autofocus="" required=""/>
              </div>
            </div>
            <div class="row">
-             <div class="col-md-offset-4 col-md-1">
+             <div class="text-center">
                <input type="password" name="password" placeholder="Password" required=""/>
              </div>
            </div>
            <div class="row">
-             <div class="col-md-offset-4 col-md-1">
+             <div class="text-center">
                <input type="submit" value="Connexion" class="btn btn-default btn-sm"/>
              </div>
            </div>

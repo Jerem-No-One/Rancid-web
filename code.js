@@ -29,3 +29,8 @@ function deleteDevice()
     delete_device.submit();
   }
 }
+
+function addDevice()
+{
+  alert("ajouté");
+}

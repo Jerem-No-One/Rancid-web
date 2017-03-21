@@ -53,7 +53,7 @@ input[type=radio]{
  border:none;
  width:10px;
  }
- .form-control.radio-inline{
+.form-control .radio-inline{
    margin: 0px;
    margin-left: 10px;
  }
