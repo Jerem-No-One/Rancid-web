@@ -96,7 +96,7 @@ session_start();
         fclose($hosts);
         fclose($îp_add_txt);
       }
-      header('Location:index.php');
+      //header('Location:index.php');
     }
     else
     {

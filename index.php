@@ -77,8 +77,8 @@ session_start();
             </div>
             <div class="col-md-offset-1 col-md-4">
               <div id="password_enable" class="form-group">
-                <label class="control-label" for="password_enable">Mot de passe enable</label>
-                <input id="disabledInput" class="form-control" type="password" name="password_enable" placeholder="Password" disabled/>
+                <label class="control-label" for="password_enable">Mot de passe enable <em>*</em></label>
+                <input id="disabledInput" class="form-control" type="password" name="password_enable" placeholder="Password" required="" disabled/>
               </div>
             </div>
           </div>
