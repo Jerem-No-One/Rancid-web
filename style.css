@@ -1,7 +1,7 @@
 .form-group .radio-inline input[type="radio"] {
-    position: relative;
-    width: inherit;
-}
+  position: relative;
+  width: inherit;
+  }
 /* body {
  font-family: 'Trebuchet MS', Verdana, Arial, sans-serif;
  font-size: 10pt;
@@ -49,32 +49,36 @@ select {
  }
 */
 input[type=radio]{
- background-color:transparent;
- border:none;
- width:10px;
- }
+  background-color:transparent;
+  border:none;
+  width:10px;
+  margin:0px 0 0;
+  left: 5px;
+  }
 .form-control .radio-inline{
    margin: 0px;
    margin-left: 10px;
- }
+  }
 input[type=submit], input[type=button] {
- width:100px;
- margin-left:5px;
- box-shadow:1px 1px 1px #FFFFFF;
- cursor:pointer;
- }
+  width:100px;
+  margin-left:5px;
+  box-shadow:1px 1px 1px #FFFFFF;
+  cursor:pointer;
+  }
 em {
- font-weight: bold;
- font-style: normal;
- color: #f00;
- }
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+  }
 .btn-sm {
   margin-top: 25px;
 }
 .text-radio{
   font-weight: inherit;
   cursor: pointer;
-}
+  margin-left: 5px;
+  margin-right: 10px;
+  }
  /*
 #password_enable{
   display:none;
