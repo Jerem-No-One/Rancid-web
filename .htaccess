@@ -1,7 +1,0 @@
-<IfModule mod_rewrite.c>
-RewriteEngine on
-
-RewriteRule ^ - [E=protossl]
-RewriteCond %{HTTPS} ON
-RewriteRule ^ - [E=protossl:s]
-</IfModule>
