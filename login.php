@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
     <title>Login</title>
   </head>
+  <script type="text/javascript" src="code.js"></script>
   <body>
     <?php
     session_start();
