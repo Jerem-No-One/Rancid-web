@@ -36,7 +36,7 @@ function addDevice()
 }
 
 
-if(document.location.protocol == "http:")
+/*if(document.location.protocol == "http:")
 {
   document.location.href = "https://"+document.location.host+document.location.pathname;
-}
+}*/
