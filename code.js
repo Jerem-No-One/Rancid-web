@@ -1,15 +1,3 @@
-/*function passwordEnable()
-{
-  if(document.getElementById('oui').checked == true)
-  {
-    document.getElementById('password_enable').style.display = "none";
-  }
-  else if (document.getElementById('non').checked == true)
-  {
-    document.getElementById('password_enable').style.display = "block";
-  }
-}*/
-
 function passwordEnable()
 {
   if(document.getElementById('non').checked == true)
@@ -30,10 +18,10 @@ function deleteDevice()
   }
 }
 
-function addDevice()
-{
-  alert("ajouté");
-}
+// function addDevice()
+// {
+//   alert("ajouté");
+// }
 
 
 /*if(document.location.protocol == "http:")

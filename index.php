@@ -7,6 +7,8 @@ session_start();
   <meta charset="utf-8" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
   <title>Rancid Web</title>
 </head>
 <body>
@@ -14,44 +16,31 @@ session_start();
   if (!empty($_SESSION['logged_in']))
   {
     ?>
-    <!-- <div class="row"> -->
-    <!-- <div class="col-md-offset-4 col-md-3 text-center">
-    <h1>Rancid Web</h1>
-  </div> -->
-  <!-- <div class="col-md-offset-1 col-lg-1">
-  <button type="button" class="btn btn-default btn-sm" OnClick="location.href='websvn/index.php'">
-  <span class="glyphicon glyphicon-list"></span> Websvn
-</button>
-</div>
-<div class="col-lg-1">
-<button type="button" class="btn btn-default btn-sm" OnClick="location.href='settings.php'">
-<span class="glyphicon glyphicon-cog"></span> Paramètres
-</button>
-</div>
-<div class="col-lg-1">
-<button type="button" class="btn btn-default btn-sm" OnClick="location.href='logout.php'">
-<span class="glyphicon glyphicon-off"></span> Déconnexion
-</button>
-</div>
-</div>-->
 <div class="container">
   <div class="row">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
           <a class="navbar-brand" href="index.php">Rancid Web</a>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="websvn/index.php"><span class="glyphicon glyphicon-list"></span> Websvn</a></li>
           <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> Paramètres</a></li>
           <li><a href="logout.php"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
         </ul>
       </div>
+    </div>
     </nav>
   </div>
 </div>
 <div class="container">
-  <form action="add_device.php" method="post" name="add_device">  <!-- Formulaire ajout d'un device -->
+  <form action="add_device.php" method="post" name="add_device" class="form">  <!-- Formulaire ajout d'un device -->
     <legend>Ajouter un équipement</legend>
     <div class="row">
       <div class="col-md-offset-1 col-md-4">
@@ -185,6 +174,8 @@ else
   header('Location:login.php');
 }
 ?>
-<script src="code.js"></script>
+
+
+  <script src="code.js"></script>
 </body>
 </html>

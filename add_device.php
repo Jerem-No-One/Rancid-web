@@ -36,6 +36,9 @@ session_start();
           if(preg_match("#$ip_device#", $ip_exist)) // On vérifie que l'ip ajouté n'est pas déjà présent
           {
             echo '<div class="text-center">L\'ip est déjà attribué à un équipement ...</div>';
+            // echo"<script language=\"javascript\">"
+            // echo"alert('L'ip est déjà attribué')";
+            // echo"</script>";
             $abort = TRUE;
           }
         }
